@@ -1,13 +1,17 @@
  @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
  body {
-   background-color: rgb(8, 15, 44);
+   background-color: hsl(228, 69%, 10%);
    color: white;
-   padding: 4rem;
    display: flex;
    align-items: center;
    justify-content: center;
    font-family: 'Silkscreen', cursive;
+   padding: 2rem;
+ }
+
+ h1 {
+   font-size: 3rem;
  }
 
  main {
@@ -18,40 +22,11 @@
  }
 
  main>:nth-child(1) {
-   width: 30%;
+   width: 40%;
  }
 
  main>:nth-child(2) {
-   width: 70%;
- }
-
- .buttons {
-   display: flex;
-   flex-direction: column;
- }
-
- button {
-   border: none;
-   background: blueviolet;
-   color: white;
-   border-radius: 4px;
-   padding: .25rem;
-   text-transform: uppercase;
-   transition: box-shadow .3s ease;
- }
-
- button:focus {
-   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
-   background: rgb(158, 64, 246);
- }
-
- h1 {
-   margin-bottom: 2rem;
-   font-size: 2.5rem;
- }
-
- .buttons>* {
-   margin-bottom: 1rem;
+   width: 60%;
  }
 
  #drawingGrid {
@@ -61,9 +36,77 @@
    background-color: rgb(72, 68, 98);
    border-radius: 10px;
    padding: 1.5rem;
+   cursor: crosshair;
+   margin-bottom: 1rem;
  }
 
  #drawingGrid div {
    border: solid .25px rgba(0, 0, 0, 0.1);
    transition: background .3s ease-in-out;
+ }
+
+ .buttons {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+ }
+
+ .buttons input {
+   display: none;
+ }
+
+ button {
+   border: none;
+   background: blueviolet;
+   color: white;
+   border-radius: 4px;
+   padding: .25rem;
+   text-transform: uppercase;
+ }
+
+ button:active {
+   background-color: rgb(194, 135, 249);
+ }
+
+ .buttons label {
+   display: block;
+   text-align: center;
+   border: none;
+   background: blueviolet;
+   color: white;
+   border-radius: 4px;
+   padding: .25rem;
+   text-transform: uppercase;
+   transition: .3s ease;
+ }
+
+ .buttons input:checked~label {
+   background: white;
+   color: hsl(228, 69%, 10%);
+ }
+
+ /* GRID OPTIONS */
+ .grid-options {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .grid-options input {
+   padding: 5px;
+   font-size: 1.1rem;
+   border: none;
+   border-radius: 5px;
+   outline: 5px solid transparent;
+   color: hsl(228, 69%, 10%);
+   transition: .3s ease;
+ }
+
+ .grid-options input:focus {
+   outline: solid 5px blueviolet;
+ }
+
+ .grid-options label {
+   font-size: 1.25rem;
  }

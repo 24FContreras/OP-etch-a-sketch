@@ -18,18 +18,41 @@
 
     <section class="buttons">
       <h1>Etch-a-Sketch</h1>
-      <button id="blackButton">Black</button>
+      <!--  <button id="blackButton">Black</button>
       <button id="rainbowButton">Raibow!</button>
       <button id="shadowButton">Shadow</button>
-      <button id="eraseButton">Erase</button>
+      <button id="eraseButton">Erase</button>-->
+
+      <div class="custom radio">
+        <input type="radio" name="brush" value="black" id="blackBrush" checked>
+        <label for="blackBrush"><i class="fa-solid fa-pen-nib"></i> Black</label>
+      </div>
+      <div class="custom radio">
+        <input type="radio" name="brush" value="rainbow" id="rainbowBrush">
+        <label for="rainbowBrush"><i class="fa-solid fa-rainbow"></i> Rainbow</label>
+      </div>
+      <div class="custom radio">
+        <input type="radio" name="brush" value="shade" id="shadeBrush">
+        <label for="shadeBrush"><i class="fa-solid fa-circle-half-stroke"></i> Shader</label>
+      </div>
+      <div class="custom radio">
+        <input type="radio" name="brush" value="erase" id="eraser">
+        <label for="eraser"><i class="fa-solid fa-eraser"></i> Eraser</label>
+      </div>
     </section>
 
     <section>
       <div id="drawingGrid"></div>
-      <label for="numberOfRows" id="gridLabel">16x16</label>
-      <input type="number" name="numberOfRows" id="gridRowSelection" min="4" max="100">
-      <button id="createGridButton">Create grid</button>
-      <button id="clearGrid">Clear</button>
+      <div class="grid-options">
+        <div>
+          <input type="number" name="numberOfRows" id="gridRowSelection" min="2" max="64">
+          <label for="numberOfRows" id="gridLabel">16x16</label>
+        </div>
+        <div>
+          <button id="createGridButton">Create grid</button>
+          <button id="clearGrid">Clear</button>
+        </div>
+      </div>
     </section>
 
   </main>

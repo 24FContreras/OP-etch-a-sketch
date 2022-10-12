@@ -1,6 +1,7 @@
 console.log("🦆Linkin' duck");
 
 const drawingGrid = document.querySelector("#drawingGrid");
+let brush = "black";
 
 drawingGrid.ondragstart = function () {
   return false;
@@ -8,8 +9,6 @@ drawingGrid.ondragstart = function () {
 
 const createGridButton = document.querySelector("#createGridButton");
 const gridRowSelection = document.querySelector("#gridRowSelection");
-
-let brush = "black";
 
 //MOUSEDOWN VALIDATION
 let isMousedown = false;
@@ -23,7 +22,7 @@ const paintingFunction = (e) => {
   if (brush === "black") e.target.style.background = "rgb(0, 0, 0)";
   if (brush === "rainbow")
     e.target.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
-  if (brush === "shadow") {
+  if (brush === "shade") {
     let currentColor = e.target.style.background;
     colorArray = currentColor.split(",");
     for (i = 0; i < 3; i++) {
@@ -53,14 +52,18 @@ const createGrid = (gridSize) => {
 
   drawingGrid.appendChild(gridFragment);
   drawingGrid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+
+  document.querySelector(
+    "#gridLabel"
+  ).textContent = `${gridSize} x ${gridSize}`;
 };
 
-//FIRST LOAD OF THE GRID rainbowBrush()
+//FIRST LOAD OF THE GRID
 window.onload = createGrid(16);
 
 //BUTTONS
 createGridButton.addEventListener("click", () => {
-  if (gridRowSelection.value <= 100) {
+  if (gridRowSelection.value <= 64) {
     createGrid(gridRowSelection.value);
   }
 });
@@ -73,22 +76,10 @@ clearGridButton.addEventListener("click", () => {
   }
 });
 
-const blackCButton = document.querySelector("#blackButton");
-blackButton.addEventListener("click", () => {
-  brush = "black";
-});
+const brushes = document.querySelectorAll(".buttons input");
 
-const rainbowCButton = document.querySelector("#rainbowButton");
-rainbowButton.addEventListener("click", () => {
-  brush = "rainbow";
-});
-
-const shadowColorButton = document.querySelector("#shadowButton");
-shadowButton.addEventListener("click", () => {
-  brush = "shadow";
-});
-
-const eraseButton = document.querySelector("#eraseButton");
-eraseButton.addEventListener("click", () => {
-  brush = "erase";
+brushes.forEach((selectedBrush) => {
+  selectedBrush.addEventListener("click", function () {
+    brush = selectedBrush.value;
+  });
 });
