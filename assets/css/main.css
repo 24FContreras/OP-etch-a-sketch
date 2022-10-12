@@ -62,6 +62,7 @@
    border-radius: 4px;
    padding: .25rem;
    text-transform: uppercase;
+   cursor: pointer;
  }
 
  button:active {
@@ -78,6 +79,7 @@
    padding: .25rem;
    text-transform: uppercase;
    transition: .3s ease;
+   cursor: pointer;
  }
 
  .buttons input:checked~label {
