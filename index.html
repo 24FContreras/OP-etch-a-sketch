@@ -15,18 +15,22 @@
 
 <body>
   <main>
-    <h1>Etch-a-Sketch</h1>
+
     <section class="buttons">
+      <h1>Etch-a-Sketch</h1>
       <button id="blackButton">Black</button>
       <button id="rainbowButton">Raibow!</button>
       <button id="shadowButton">Shadow</button>
       <button id="eraseButton">Erase</button>
     </section>
-    <section id="drawingGrid"></section>
-    <label for="numberOfRows" id="gridLabel">16x16</label>
-    <input type="number" name="numberOfRows" id="gridRowSelection" min="4" max="100">
-    <button id="createGridButton">Create grid</button>
-    <button id="clearGrid">Clear</button>
+
+    <section>
+      <div id="drawingGrid"></div>
+      <label for="numberOfRows" id="gridLabel">16x16</label>
+      <input type="number" name="numberOfRows" id="gridRowSelection" min="4" max="100">
+      <button id="createGridButton">Create grid</button>
+      <button id="clearGrid">Clear</button>
+    </section>
 
   </main>
 
